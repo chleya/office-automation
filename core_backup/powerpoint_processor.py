@@ -9,52 +9,15 @@ import os
 from typing import Optional, List, Dict, Any, Union
 from pathlib import Path
 
-# Try to import error_handler with different methods
-try:
-    # First try absolute import
-    from utils.error_handler import (
-        DocumentCreationError,
-        DocumentReadError,
-        DocumentSaveError,
-        ValidationError,
-        create_error_context,
-        validate_file_path,
-        validate_format,
-    )
-except ImportError:
-    try:
-        # Try relative import
-        from ..utils.error_handler import (
-            DocumentCreationError,
-            DocumentReadError,
-            DocumentSaveError,
-            ValidationError,
-            create_error_context,
-            validate_file_path,
-            validate_format,
-        )
-    except ImportError:
-        # Create dummy error classes
-        class DocumentCreationError(Exception):
-            pass
-        
-        class DocumentReadError(Exception):
-            pass
-        
-        class DocumentSaveError(Exception):
-            pass
-        
-        class ValidationError(Exception):
-            pass
-        
-        def create_error_context(*args, **kwargs):
-            return None
-        
-        def validate_file_path(*args, **kwargs):
-            return True
-        
-        def validate_format(*args, **kwargs):
-            return True
+from ..utils.error_handler import (
+    DocumentCreationError,
+    DocumentReadError,
+    DocumentSaveError,
+    ValidationError,
+    create_error_context,
+    validate_file_path,
+    validate_format,
+)
 
 
 class PowerPointProcessor:
