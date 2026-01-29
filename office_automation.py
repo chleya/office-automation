@@ -16,6 +16,32 @@ class OfficeAutomation:
         self.config = config or {}
         print("Office Automation initialized (Simple Direct Version)")
     
+    def get_info(self):
+        """获取系统信息"""
+        import sys
+        import platform
+        
+        info = {
+            "version": "1.0.0-fixed",
+            "python_version": sys.version,
+            "platform": platform.platform(),
+            "modules": {
+                "excel": self._check_module("openpyxl"),
+                "word": self._check_module("docx"),
+                "powerpoint": self._check_module("pptx")
+            },
+            "mode": "real" if self._check_module("openpyxl") else "dummy"
+        }
+        return info
+    
+    def _check_module(self, module_name):
+        """检查模块是否可用"""
+        try:
+            __import__(module_name)
+            return True
+        except ImportError:
+            return False
+    
     @property
     def excel(self):
         """Excel处理器"""
