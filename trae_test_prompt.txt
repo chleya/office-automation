@@ -1,0 +1,17 @@
+请创建一个Python示例文件，演示如何使用Office Automation库生成PowerPoint演示。
+
+要求：
+1. 文件路径：F:\skill\office-automation\examples\generate_presentation.py
+2. 功能：创建完整的业务演示，包含标题页、目录、内容页、图表页、总结页
+3. 特性：使用模板、添加图表、设置动画、导出多种格式
+4. 代码风格：与现有示例一致（使用OfficeAutomation类）
+5. 包含：完整的错误处理、进度显示、文件保存
+6. 输出：生成.pptx文件，可选转换为PDF
+7. 兼容性：支持Microsoft PowerPoint和WPS Office
+
+现有项目结构：
+- office_automation.py: 主入口文件
+- examples/create_report.py: Word文档示例
+- examples/process_spreadsheet.py: Excel处理示例
+
+请生成完整的、可运行的Python代码文件，包含详细的文档字符串和注释。
